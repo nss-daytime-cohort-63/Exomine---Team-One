@@ -1,0 +1,38 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.governor_facility_colony {
+    border: 2px dotted blue;
+}
+
+.governor_choices {
+    border: 2px dotted red;
+    margin: 5px 5px;
+}
+
+.facility_choices {
+    border: 2px dotted purple;
+    margin: 5px 5px;
+}
+
+.colony_minerals {
+    border: 2px dotted green;
+    margin: 5px 5px;
+}
+
+.availableMinerals_choices {
+    border: 2px dotted orange;
+    margin: 5px 5px;
+}
+
+.available_minerals {
+    border: 2px dotted goldenrod;
+    margin: 5px 5px;
+}
+
+.purchase {
+    border: 2px dotted black;
+    margin: 5px 5px;
+}
