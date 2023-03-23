@@ -10,6 +10,9 @@ document.addEventListener(
             const chosenOption = changeEvent.target.value
             setGovernor(parseInt(changeEvent.target.value))
 
+
+//get the governor object and can do this by getting to the id
+//then once we have the object, then can access the governor id 
             
             
             
@@ -20,7 +23,8 @@ document.addEventListener(
 export const Governors = () => {
     let html = "<h4>Choose a Governor</h4>"
     html += `<select id="governor">`
-    html += `<option value="0">Choose a Governor...</option>`
+    html += `<option selected value="0">Choose a Governor...</option>`
+    //if theres a governor is transient state, put a select on whichever has the governor id, to make the name of the governor show up for the user.
 
     const listItems = governors.map(governor => {
 

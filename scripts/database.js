@@ -59,7 +59,8 @@ export const getAvailableMinerals = () => {
     return database.availableMinerals.map(aM => ({...aM}))
 }
 export const getTransientState = () => {
-    return database.transientState.map(tS => ({...tS}))
+    return database.transientState
+    
 }
 
 export const setFacility = (facilityId) => {
