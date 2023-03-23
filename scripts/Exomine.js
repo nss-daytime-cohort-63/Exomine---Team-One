@@ -1,6 +1,7 @@
 import { Governors } from "./Governors.js"
 import { facilities } from "./Facilities.js"
 import { Colonies } from "./Colonies.js"
+import { AvailableMinerals } from "./availableMinerals.js"
 
 export const Exomine = () => {
     return `
@@ -14,12 +15,12 @@ export const Exomine = () => {
             ${facilities()}
         </section>
         <section class="colony_minerals">
-            <h2>Eventual Colony Material${Colonies()}</h2>
+            ${Colonies()}
         </section>
     </article>
     <article class="availableMinerals_purchases">
         <section class="available_minerals">
-            <h2>Eventual Available Facility Minerals</h2>
+            ${AvailableMinerals()}
         </section>
         <section class="purchase">
             <h2>Eventual Purchase Cart</h2>

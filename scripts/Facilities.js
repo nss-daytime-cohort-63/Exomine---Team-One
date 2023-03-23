@@ -1,8 +1,9 @@
-import { getFacilities, setFacility, getAvailableMinerals } from "./database.js";
+import { getFacilities, setFacility, getTransientState } from "./database.js";
 
 
 export const facilities = () => {
     const facilities = getFacilities()
+    const transientState = getTransientState()
     let html = "<h4>Choose a Facility</h4>"
     html += `<select id="facility">`
     html += `<option value="0">Choose a Facility...</option>`
@@ -12,9 +13,11 @@ export const facilities = () => {
         return `<option value="${facility.id}">${facility.name}</option>`
     })
 
-html += listItems.join("")
-html += "</select>"
-return html
+
+
+    html += listItems.join("")
+    html += "</select>"
+    return html
 }
 
 document.addEventListener(
