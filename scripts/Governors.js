@@ -7,7 +7,6 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "governor") {
-            const chosenOption = changeEvent.target.value
             setGovernor(parseInt(changeEvent.target.value))
 
 
