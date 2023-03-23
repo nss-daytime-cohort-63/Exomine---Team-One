@@ -1,9 +1,20 @@
-import { getMinerals, getFacilities, getTransientState, getAvailableMinerals } from "./database.js";
+import { getMinerals, getFacilities, getTransientState, getAvailableMinerals, setMineral } from "./database.js";
 
 const minerals = getMinerals()
 const facilities = getFacilities()
 const transientState = getTransientState()
 const availableMinerals = getAvailableMinerals()
+
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        if (clickEvent.target.name === "mineralSelect") {
+            setMineral(parseInt(clickEvent.target.value))
+
+
+        }
+    }
+)
 
 export const AvailableMinerals = () => {
     let html = `<section id = "availableMinerals">`
@@ -20,7 +31,7 @@ export const AvailableMinerals = () => {
                     if (availableMineral.facilityId === facility.id) {
                         for (let mineral of minerals) {
                             if (mineral.id === availableMineral.mineralId) {
-                                html += `<li>${mineral.quantity} tons of ${mineral.type}</li>`
+                                html += `<li class="mineralList"><input type="radio" name="mineralSelect" value="${mineral.id}"/>${mineral.quantity} tons of ${mineral.type}</li>`
                             }
 
                         }

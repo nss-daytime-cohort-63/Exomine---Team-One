@@ -36,3 +36,7 @@
     border: 2px dotted black;
     margin: 5px 5px;
 }
+
+.mineralList {
+    list-style-type: none;
+}

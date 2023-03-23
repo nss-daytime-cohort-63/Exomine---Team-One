@@ -71,7 +71,10 @@ export const setGovernor = (GovernorId) => {
     database.transientState.selectedGovernor = GovernorId
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
-
+export const setMineral = (MineralId) => {
+    database.transientState.selectedMineral = MineralId
+    document.dispatchEvent( new CustomEvent("stateChanged") )
+}
 
 export const purchaseMineral = () => {
         // Broadcast custom event to entire documement so that the
