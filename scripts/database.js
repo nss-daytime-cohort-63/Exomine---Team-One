@@ -1,5 +1,7 @@
 const database = {
-    transientState: {},
+    transientState: {
+        object1: {}
+    },
     purchases: [{
         id: 1,
         colonyId: 1,
@@ -69,6 +71,19 @@ export const getTransientState = () => {
     return database.transientState
     
 }
+// export const getSelectedMineral = () => {
+//     return database.transientState.selectedMineral
+// }
+
+// export const getSelectedGovernor = () => {
+//     return database.transientState.selectedGovernor
+// }
+
+// export const getSelectedFacility = () => {
+//     return database.transientState.selectedFacility
+// }
+
+
 
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
@@ -83,11 +98,30 @@ export const setMineral = (MineralId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const setPurchaseMineral = (MineralId) => {
+    database.transientState.object1.mineralId = MineralId
+}
 
+export const setPurchaseQuantity = (Quantity) => {
+    database.transientState.object1.quantity = Quantity
+}
+
+export const setPurchaseColony = (ColonyId) => {
+    database.transientState.object1.colonyId = ColonyId
+}
+
+export const incrementDecrement = () => {
+    
+}
 export const purchaseMineral = () => {
-        // Broadcast custom event to entire documement so that the
-        // application can re-render and update state
-        const newPurchase = {...database.transientState}
+    //if there is a selected governor, facility and mineral    
+    if (database.transientState.selectedMineral && database.transientState.selectedGovernor && database.transientState.selectedFacility) {
+
+
+        const currentTransientState = getTransientState()
+        setPurchaseColony()    
+
+        const newPurchase = {...database.transientState.object1}
 
         const lastIndex = database.purchases.length - 1
         newPurchase.id = database.purchases[lastIndex].id +1
@@ -98,4 +132,7 @@ export const purchaseMineral = () => {
 
         document.dispatchEvent( new CustomEvent("stateChanged") )
     }
+}
+
+
 
