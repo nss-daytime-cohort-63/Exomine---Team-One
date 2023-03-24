@@ -1,7 +1,8 @@
-import { getGovernors, setGovernor, getColonies } from "./database.js"
+import { getGovernors, setGovernor, getColonies, getTransientState } from "./database.js"
 
 const governors = getGovernors()
 const colonies = getColonies()
+const transientState = getTransientState()
 
 document.addEventListener(
     "change",
@@ -25,10 +26,9 @@ export const Governors = () => {
     html += `<option selected value="0">Choose a Governor...</option>`
     //if theres a governor is transient state, put a select on whichever has the governor id, to make the name of the governor show up for the user.
 
-    const listItems = governors.map(governor => {
-
+    const listItems = governors.map((governor) => {
         return `<option value="${governor.id}">${governor.name}</option>`
-    })
+})
 
 html += listItems.join("")
 html += "</select>"

@@ -4,8 +4,15 @@ const database = {
         id: 1,
         colonyId: 1,
         mineralId: 1,
-        quantity: 1
-    }],
+        quantity: 2
+    },
+    {
+        id: 2,
+        colonyId: 1,
+        mineralId: 3,
+        quantity: 5
+    }
+],
     colonies: [
         {id: 1, name: "Terresan"},
         {id: 2, name: "Adarlan"},
@@ -76,6 +83,7 @@ export const setMineral = (MineralId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+
 export const purchaseMineral = () => {
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
@@ -84,7 +92,7 @@ export const purchaseMineral = () => {
         const lastIndex = database.purchases.length - 1
         newPurchase.id = database.purchases[lastIndex].id +1
 
-        database.purchases.push(newOrder)
+        database.purchases.push(newPurchase)
 
         database.transientState = {}
 

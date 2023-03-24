@@ -9,9 +9,8 @@ export const facilities = () => {
     html += `<option value="0">Choose a Facility...</option>`
 
     const listItems = facilities.map(facility => {
-
         return `<option value="${facility.id}">${facility.name}</option>`
-    })
+})
 
 
 
