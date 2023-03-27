@@ -10,7 +10,7 @@ export const Colonies = () => {
     
     //check if theres a selected governor, if so:
     if (transientState.selectedGovernor === undefined) {
-        html += `<h2>Colony Minerals</h2>`
+        html += `<h4>Colony Minerals</h4>`
         
     }
     else {
@@ -18,7 +18,7 @@ export const Colonies = () => {
             if (transientState.selectedGovernor === governor.id) {
                 for (let colony of colonies) {
                     if (governor.colonyId === colony.id) {
-                        html += `<h2>${colony.name} Minerals</h2>`
+                        html += `<h4>${colony.name} Minerals</h4>`
                     }
                 }
             }

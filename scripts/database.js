@@ -110,8 +110,20 @@ export const setPurchaseColony = (ColonyId) => {
     database.transientState.object1.colonyId = ColonyId
 }
 
-export const incrementDecrement = () => {
-    
+//unfinished function, never got purchase button to work
+export const incrementDecrement = (transientState) => {
+    const availableMinerals = getAvailableMinerals()
+    //compare if selected avaiable mineral matches the transient state mineral
+    for (let availableMineral of availableMinerals) {
+        if (availableMineral.mineralId === transientState.mineralId) {
+            return availableMineral.quantity - 1
+        }
+    }
+    //available mineral quanitity - 1
+    //check if selected mineral exists in colony
+    //if it does, purchase.quanitity + 1
+    //else return new field 1 ton of mineral.type
+
 }
 export const purchaseMineral = () => {
     //if there is a selected governor, facility and mineral    

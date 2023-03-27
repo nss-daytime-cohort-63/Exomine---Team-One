@@ -15,29 +15,30 @@ document.addEventListener("click", (event) => {
 export const Exomine = () => {
     return `
     <h1>Exomine Team One</h1>
-
-    <article class="governor_facility_colony">
-        <section class="governor_choices">
+<article class="mainContent">
+    <article class="governor_colony">
+        <section class="sectionsTwo">
             ${Governors()}
-            </section>
-        <section class="facility_choices">
-            ${facilities()}
         </section>
-        <section class="colony_minerals">
+        <section class="sections">
             ${Colonies()}
-        </section>
-        <section class="colony_minerals">
             ${selectedMineral()}
         </section>
     </article>
-    <article class="availableMinerals_purchases">
-        <section class="available_minerals">
+    <article class="facilities">
+        <section class="sectionsTwo">
+            ${facilities()}
+        </section>
+        <section class="sections">
             ${AvailableMinerals()}
         </section>
-        <section class="purchase">
+    </article>
+    <article class="availableMinerals_purchases">
+        <section class="sectionsTwo">
             ${PurchaseCart()}
             <button class="button" id="submitPurchase">Purchase Mineral</button>
         </section>
     </article>
+</article>
     `
 }
