@@ -21,7 +21,7 @@ const buildColonyMinerals = (purchase) => {
                             if (colony.id === purchase.colonyId) {
                                 for (let mineral of minerals) {
                                     if (mineral.id === purchase.mineralId){
-                                    html += `<li>${purchase.quantity} tons of ${mineral.type}</li>`
+                                    html += `<li class="list">${purchase.quantity} tons of ${mineral.type}</li>`
                                     } 
                                 }
                             } else {

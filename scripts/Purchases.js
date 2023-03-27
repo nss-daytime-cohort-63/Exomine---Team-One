@@ -10,7 +10,7 @@ export const PurchaseCart = () => {
     let html = `<section id="chosenMineral">`
     
     if (transientState.selectedMineral === undefined) {
-        html += `<h2>Shopping Cart</h2>`
+        html += `<h4>Shopping Cart</h4>`
     }
     else {
        for (let mineral of minerals) {

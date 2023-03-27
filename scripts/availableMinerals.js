@@ -18,15 +18,15 @@ document.addEventListener(
 
 export const AvailableMinerals = () => {
     let html = `<section id = "availableMinerals">`
-    html += `<ul>`
+    html += ""
 
     if (transientState.selectedFacility === undefined) {
-        html += `<h2>Facility Minerals</h2>`
+        html += `<h4>Facility Minerals</h4>`
     }
     else {
         for (let facility of facilities) {
             if (transientState.selectedFacility === facility.id) {
-                html += `<h2>${facility.name}'s Minerals</h2>`
+                html += `<h4>${facility.name}'s Minerals</h4>`
                 for (let availableMineral of availableMinerals) {
                     if (availableMineral.facilityId === facility.id) {
                         for (let mineral of minerals) {
@@ -40,6 +40,6 @@ export const AvailableMinerals = () => {
             }
         }
     }
-    html += `</ul></section>`
+    html += `</section>`
     return html
 }
